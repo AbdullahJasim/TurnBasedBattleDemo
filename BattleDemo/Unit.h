@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>
 
+#include "Ability.h"
+
 class Unit {
 public:
 	//ctor dtor
@@ -28,6 +30,10 @@ public:
 	void SetHP(int HP);
 	bool GetAlive() const;
 
+	void AttachAbility(Ability* ability);
+	std::vector<Ability*> GetAbilities();
+	void UseAbility(Unit& target, int abilityIndex);
+
 	//prints information about unit
 	virtual void Print() const;
 
@@ -44,6 +50,7 @@ private:
 	bool m_IsAlive, m_CanAttack;
 	int m_HP, m_Damage, m_TurnsToAttack;
 	int m_Armor;
+	std::vector<Ability*> m_Abilities;
 
 	virtual void CopyFrom(const Unit& src);
 	virtual void FreeMemory();

@@ -3,29 +3,30 @@
 using namespace std;
 
 //ctor
-Unit::Unit() {
-	SetName("Unit");
-	SetDamage(10);
-	SetHP(40);
-	m_IsAlive = true;
-}
+Unit::Unit() :
+	m_Name("Unit"),
+	m_Damage(10),
+	m_HP(40),
+	m_IsAlive(true)
+{}
 
-Unit::Unit(string name, int HP, int damage) {
-	SetName(name);
-	SetHP(HP);
-	SetDamage(damage);
-	m_IsAlive = true;
-}
+Unit::Unit(string name, int HP, int damage) : 
+	m_Name(name),
+	m_HP(HP),
+	m_Damage(damage),
+	m_IsAlive(true)
+{}
 
 //dtor
-Unit::~Unit() {
-
-}
+Unit::~Unit() {}
 
 //copy ctors
-Unit::Unit(const Unit& src) {
-	CopyFrom(src);
-}
+Unit::Unit(const Unit& src) :
+	m_Name(src.GetName()),
+	m_HP(src.GetHP()),
+	m_Damage(src.GetDamage()),
+	m_IsAlive(src.GetAlive())
+{}
 
 Unit& Unit::operator=(const Unit& src) {
 	if (this == &src) return *this;
@@ -35,13 +36,9 @@ Unit& Unit::operator=(const Unit& src) {
 }
 
 //move ctors
-Unit::Unit(Unit&& other) {
+Unit::Unit(Unit&& other) {}
 
-}
-
-Unit& Unit::operator=(Unit&& other) {
-	return *this;
-}
+Unit& Unit::operator=(Unit&& other) { return *this; }
 
 //helper functions for structors
 void Unit::CopyFrom(const Unit& src) {
@@ -60,32 +57,25 @@ void Unit::MoveFrom(Unit&& src) {
 }
 
 //setters and getters
-string Unit::GetName() const {
-	return m_Name;
+string Unit::GetName() const { return m_Name; }
+void Unit::SetName(string name) { m_Name = name; }
+int Unit::GetDamage() const { return m_Damage; }
+void Unit::SetDamage(int damage) { m_Damage = damage; }
+int Unit::GetHP() const { return m_HP; }
+void Unit::SetHP(int HP) { m_HP = HP; }
+bool Unit::GetAlive() const { return m_IsAlive; }
+
+void Unit::AttachAbility(Ability* ability) {
+	//need to take in a copy and create a pointer
+	m_Abilities.push_back(ability);
 }
 
-void Unit::SetName(string name) {
-	m_Name = name;
+vector<Ability*> Unit::GetAbilities() {
+	return m_Abilities;
 }
 
-int Unit::GetDamage() const {
-	return m_Damage;
-}
-
-void Unit::SetDamage(int damage) {
-	m_Damage = damage;
-}
-
-int Unit::GetHP() const {
-	return m_HP;
-}
-
-void Unit::SetHP(int HP) {
-	m_HP = HP;
-}
-
-bool Unit::GetAlive() const {
-	return m_IsAlive;
+void Unit::UseAbility(Unit& target, int abilityIndex) {
+	m_Abilities.at(abilityIndex)->Apply(target);
 }
 
 //unit functions
