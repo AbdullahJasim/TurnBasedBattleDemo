@@ -1,0 +1,6 @@
+﻿  BattleDemo.cpp
+c:\gitprojects\turnbasedbattledemo\battledemo\battledemo.cpp(10): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Unit.cpp
+c:\gitprojects\turnbasedbattledemo\battledemo\unit.cpp(131): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+  BattleDemo.vcxproj -> C:\GitProjects\TurnBasedBattleDemo\x64\Debug\BattleDemo.exe

@@ -56,15 +56,6 @@ void Unit::MoveFrom(Unit&& src) {
 
 }
 
-//setters and getters
-string Unit::GetName() const { return m_Name; }
-void Unit::SetName(string name) { m_Name = name; }
-int Unit::GetDamage() const { return m_Damage; }
-void Unit::SetDamage(int damage) { m_Damage = damage; }
-int Unit::GetHP() const { return m_HP; }
-void Unit::SetHP(int HP) { m_HP = HP; }
-bool Unit::GetAlive() const { return m_IsAlive; }
-
 void Unit::AttachAbility(Ability* ability) {
 	//need to take in a copy and create a pointer
 	m_Abilities.push_back(ability);
@@ -105,4 +96,55 @@ void Unit::Die() {
 	SetHP(0);
 	SetDamage(0);
 	m_IsAlive = false;
+}
+
+int Unit::CalculateDamage(Damage& d) {
+	int baseDamage = d.GetDamage();
+
+	switch (d.GetDamageType()) {
+	case Damage::PHYSICAL:
+		break;
+	case Damage::MAGICAL:
+		break;
+	default:
+		break;
+	}
+
+	return 0;
+}
+
+int Unit::CalculatePhysicalDamage(Damage& d) {
+	int randChance = 0;
+
+	//blunt damage will lose twice as much armor the unit has in damage
+	//slashing will lose only 1
+	//pierce will lose the difference between the unit's armor and its pierce value, with a min of 0
+
+	//blunt damage can stun
+	//all damage types can crit
+	switch (d.GetPhysicalType()) {
+	case Damage::BLUNT:
+		d.SetFinalDamage(d.GetDamage() - (2* GetAmor()));
+
+		randChance = rand() % 100;
+		if (randChance <= d.GetStun()) d.SetIsStun(true);
+
+		break;
+	case Damage::SLASHING:
+		d.SetFinalDamage(d.GetDamage() - GetAmor());
+		break;
+	case Damage::PIERCING:
+		int remainingArmor = GetAmor() - d.GetPierce();
+		if (0 > remainingArmor) remainingArmor = 0;
+		d.SetFinalDamage(d.GetDamage() - remainingArmor);
+		break;
+	}
+
+	randChance = rand() % 100;
+	if (randChance <= d.GetCrit()) {
+		d.SetIsCrit(true);
+		d.SetFinalDamage(d.GetFinalDamage() * 2);
+	}
+
+	return 0;
 }
