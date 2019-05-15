@@ -1,4 +1,3 @@
 ﻿  BattleDemo.cpp
-  Unit.cpp
-  Generating Code...
+c:\users\minta\source\repos\battledemo\battledemo\battledemo.cpp(10): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   BattleDemo.vcxproj -> C:\Users\minta\source\repos\BattleDemo\Debug\BattleDemo.exe

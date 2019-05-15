@@ -5,7 +5,6 @@
 #include <vector>
 
 #include "Ability.h"
-#include "Damage.h"
 
 class Unit {
 public:
@@ -47,7 +46,7 @@ public:
 	void AttachAbility(Ability* ability);
 	std::vector<Ability*> GetAbilities();
 	void UseAbility(Unit& target, int abilityIndex);
-	virtual bool ApplyDamage(int damage, const Unit& source);
+	virtual bool ApplyDamage(Damage& d, const Unit& source);
 
 	virtual void Print() const;
 	virtual void Die();

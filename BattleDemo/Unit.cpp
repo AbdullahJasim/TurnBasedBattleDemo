@@ -76,10 +76,12 @@ void Unit::Print() const {
 }
 
 void Unit::Attack(Unit& other) const {
-	other.ApplyDamage(m_Damage, *this);
+	//other.ApplyDamage(m_Damage, *this);
 }
 
-bool Unit::ApplyDamage(int damage, const Unit& source) {
+bool Unit::ApplyDamage(Damage& d, const Unit& source) {
+	int damage = CalculateDamage(d);
+
 	cout << "Unit " << source.GetName() << " attacks " << GetName() << " for " << damage << " points." << endl;
 
 	if (damage >= GetHP()) {
@@ -100,9 +102,12 @@ void Unit::Die() {
 
 int Unit::CalculateDamage(Damage& d) {
 	int baseDamage = d.GetDamage();
+	int finalDamage = 0;
 
 	switch (d.GetDamageType()) {
 	case Damage::PHYSICAL:
+		CalculatePhysicalDamage(d);
+		finalDamage = d.GetFinalDamage();
 		break;
 	case Damage::MAGICAL:
 		break;
@@ -110,11 +115,14 @@ int Unit::CalculateDamage(Damage& d) {
 		break;
 	}
 
-	return 0;
+	return finalDamage;
 }
 
 int Unit::CalculatePhysicalDamage(Damage& d) {
 	int randChance = 0;
+
+	cout << "Base damage is " << d.GetDamage() << endl;
+	cout << "Armor is " << GetAmor() << endl;
 
 	//blunt damage will lose twice as much armor the unit has in damage
 	//slashing will lose only 1
