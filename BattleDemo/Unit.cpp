@@ -153,8 +153,10 @@ int Unit::CalculatePhysicalDamage(Damage& d) {
 	}
 
 	randChance = rand() % d.GetFinalDamage();
-	randChance /= 10;
+	//CHANGE THIS
+	randChance /= (100 - d.GetFluctuation());
 	fluctuation = (int) (randChance);
+	fluctuation = abs(fluctuation);
 
 	randChance = rand() % 100;
 	if (randChance >= 50) {

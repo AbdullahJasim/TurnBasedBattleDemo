@@ -11,6 +11,8 @@ public:
 
 	int GetDamage() const { return m_BaseDamage; };
 	void SetDamage(int damage) { m_BaseDamage = damage; };
+	int GetFluctuation() const { return m_Fluctuation; };
+	void SetFluctuation(int luck) { m_Fluctuation = luck; };
 	double GetCrit() const { return m_CritChance; };
 	void SetCrit(double crit) { m_CritChance = crit; };
 	double GetStun() const { return m_StunChance; };
@@ -33,7 +35,7 @@ public:
 	void SetElement(ElementType element) { m_Element = element; };
 
 private:
-	int m_BaseDamage;
+	int m_BaseDamage, m_Fluctuation;
 	DamageType m_DamageType;
 	PhysicalType m_PhysicalType;
 	ElementType m_Element;
