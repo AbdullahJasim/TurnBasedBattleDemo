@@ -120,6 +120,7 @@ int Unit::CalculateDamage(Damage& d) {
 
 int Unit::CalculatePhysicalDamage(Damage& d) {
 	int randChance = 0;
+	int fluctuation = 0;
 
 	//blunt damage will lose twice as much armor the unit has in damage
 	//slashing will lose only 1
@@ -149,6 +150,17 @@ int Unit::CalculatePhysicalDamage(Damage& d) {
 	if (randChance <= d.GetCrit()) {
 		d.SetIsCrit(true);
 		d.SetFinalDamage(d.GetFinalDamage() * 2);
+	}
+
+	randChance = rand() % d.GetFinalDamage();
+	randChance /= 10;
+	fluctuation = (int) (randChance);
+
+	randChance = rand() % 100;
+	if (randChance >= 50) {
+		d.SetFinalDamage(d.GetFinalDamage() + fluctuation);
+	} else {
+		d.SetFinalDamage(d.GetFinalDamage() - fluctuation);
 	}
 
 	return 0;
