@@ -11,6 +11,7 @@ Ability::Ability(Unit& owner, string name, int turns, float physMod, float magMo
 {
 }
 
+/*
 Ability::Ability(const Ability& src) :
 	m_Name(src.GetName()),
 	m_TurnsToCast(src.GetTurns()),
@@ -19,6 +20,7 @@ Ability::Ability(const Ability& src) :
 	m_Owner(src.GetOwner())
 {
 }
+*/
 
 Ability::~Ability() {}
 

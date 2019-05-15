@@ -12,9 +12,9 @@ public:
 	Ability(Unit& owner, std::string name, int turns, float physMod, float magMod);
 	virtual ~Ability();
 
-	Ability(const Ability& src);
-	//no copy assignment operator will be supported for this, as it makes little sense
-	//Ability& operator=(const Ability& src);
+	//copy ctor / assignment don't make much sense in this context and as such are disabled
+	Ability(const Ability& src) = delete;
+	Ability& operator=(const Ability& src) = delete;
 
 	Unit& GetOwner() const;
 	std::string GetName() const;

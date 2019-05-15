@@ -84,7 +84,7 @@ bool Unit::ApplyDamage(Damage& d, const Unit& source) {
 
 	cout << "Unit " << source.GetName() << " attacks " << GetName() << " for " << damage << " points." << endl;
 
-	if (damage >= GetHP()) {
+	if (d.GetFinalDamage() >= GetHP()) {
 		Die();
 		return true;
 	}
@@ -120,9 +120,6 @@ int Unit::CalculateDamage(Damage& d) {
 
 int Unit::CalculatePhysicalDamage(Damage& d) {
 	int randChance = 0;
-
-	cout << "Base damage is " << d.GetDamage() << endl;
-	cout << "Armor is " << GetAmor() << endl;
 
 	//blunt damage will lose twice as much armor the unit has in damage
 	//slashing will lose only 1
