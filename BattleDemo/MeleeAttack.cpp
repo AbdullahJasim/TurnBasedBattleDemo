@@ -12,7 +12,7 @@ MeleeAttack::~MeleeAttack() {}
 
 void MeleeAttack::Apply(Unit& target) {
 	Print();
-	Damage d(40, 10.0, 0.0, 0.0, Damage::PHYSICAL, Damage::SLASHING, Damage::NONE);
+	Damage d(GetOwner().GetDamage() * GetPhysMod(), 10.0, 0.0, 0.0, Damage::PHYSICAL, Damage::SLASHING, Damage::NONE);
 	d.SetFluctuation(GetOwner().GetLuck());
 	target.ApplyDamage(d, GetOwner());
 }

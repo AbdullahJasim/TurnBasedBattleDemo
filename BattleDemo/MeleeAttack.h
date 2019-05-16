@@ -11,5 +11,5 @@ public:
 	virtual void Apply(Unit& target);
 	virtual void Trigger(Unit& target);
 private:
-
+	
 };

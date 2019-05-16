@@ -12,7 +12,7 @@ HeadSmash::~HeadSmash() {}
 
 void HeadSmash::Apply(Unit& target) {
 	Print();
-	Damage d(20, 0.0, 20.0, 0.0, Damage::PHYSICAL, Damage::BLUNT, Damage::NONE);
+	Damage d(GetOwner().GetDamage() * GetPhysMod(), 0.0, 20.0, 0.0, Damage::PHYSICAL, Damage::BLUNT, Damage::NONE);
 	d.SetFluctuation(GetOwner().GetLuck());
 	target.ApplyDamage(d, GetOwner());
 }

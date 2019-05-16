@@ -16,6 +16,9 @@
     <Filter Include="Abilities">
       <UniqueIdentifier>{879bc1c6-e0ee-402c-980b-1871ab6175bd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Units">
+      <UniqueIdentifier>{c6ed9412-e032-4da5-a5cf-744cc0cf0fdc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -35,6 +38,9 @@
     </ClInclude>
     <ClInclude Include="HeadSmash.h">
       <Filter>Abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Herja.h">
+      <Filter>Units</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +64,9 @@
     </ClCompile>
     <ClCompile Include="HeadSmash.cpp">
       <Filter>Abilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Herja.cpp">
+      <Filter>Units</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

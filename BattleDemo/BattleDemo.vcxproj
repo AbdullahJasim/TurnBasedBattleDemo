@@ -154,6 +154,7 @@
     <ClInclude Include="Ability.h" />
     <ClInclude Include="Damage.h" />
     <ClInclude Include="HeadSmash.h" />
+    <ClInclude Include="Herja.h" />
     <ClInclude Include="MeleeAttack.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Unit.h" />
@@ -163,6 +164,7 @@
     <ClCompile Include="BattleDemo.cpp" />
     <ClCompile Include="Damage.cpp" />
     <ClCompile Include="HeadSmash.cpp" />
+    <ClCompile Include="Herja.cpp" />
     <ClCompile Include="MeleeAttack.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

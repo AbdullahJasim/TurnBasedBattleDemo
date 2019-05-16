@@ -8,10 +8,9 @@
 
 class Unit {
 public:
-	//ctor dtor
+	//ctors
 	Unit();
 	Unit(std::string name, int HP, int damage);
-	virtual ~Unit();
 
 	//cpy ctors
 	Unit(const Unit& src);
@@ -20,6 +19,9 @@ public:
 	//move ctors
 	Unit(Unit&& other);
 	Unit& operator=(Unit&& other);
+
+	//dtor
+	virtual ~Unit();
 
 	//getters and setters
 	std::string GetName() const { return m_Name; };
@@ -34,8 +36,8 @@ public:
 	int GetLuck() const { return m_Luck; };
 	void SetLuck(int luck) { m_Luck = luck; };
 
-	int GetAmor() const { return m_Armor; };
-	void SetAmor(int armor) { m_Armor = armor; };
+	int GetArmor() const { return m_Armor; };
+	void SetArmor(int armor) { m_Armor = armor; };
 	int GetMagicResist() const { return m_MagicResist; };
 	void SetMagicResist(int magicResist) { m_MagicResist = magicResist; };
 	int GetFireResist() const { return m_FireResist; }
@@ -55,17 +57,18 @@ public:
 	virtual void Print() const;
 	virtual void Die();
 
-private:
+protected:
 	std::string m_Name;
 	bool m_IsAlive, m_CanAttack, m_IsStunned;
 	int m_HP, m_Damage, m_TurnsToAttack, m_Luck;
 	int m_Armor, m_MagicResist, m_FireResist, m_IceResist, m_ShockResist;
 	std::vector<Ability*> m_Abilities;
 
+	virtual int CalculateDamage(Damage& d);
+	int CalculatePhysicalDamage(Damage& d);
+
+private:
 	virtual void CopyFrom(const Unit& src);
 	virtual void FreeMemory();
 	virtual void MoveFrom(Unit&& src);
-
-	virtual int CalculateDamage(Damage& d);
-	int CalculatePhysicalDamage(Damage& d);
 };

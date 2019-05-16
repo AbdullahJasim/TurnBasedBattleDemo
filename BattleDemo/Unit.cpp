@@ -130,17 +130,17 @@ int Unit::CalculatePhysicalDamage(Damage& d) {
 	//all damage types can crit
 	switch (d.GetPhysicalType()) {
 	case Damage::BLUNT:
-		d.SetFinalDamage(d.GetDamage() - (2* GetAmor()));
+		d.SetFinalDamage(d.GetDamage() - (2* GetArmor()));
 
 		randChance = rand() % 100;
 		if (randChance <= d.GetStun()) SetIsStunned(true);//d.SetIsStun(true);
 
 		break;
 	case Damage::SLASHING:
-		d.SetFinalDamage(d.GetDamage() - GetAmor());
+		d.SetFinalDamage(d.GetDamage() - GetArmor());
 		break;
 	case Damage::PIERCING:
-		int remainingArmor = GetAmor() - d.GetPierce();
+		int remainingArmor = GetArmor() - d.GetPierce();
 		if (0 > remainingArmor) remainingArmor = 0;
 		d.SetFinalDamage(d.GetDamage() - remainingArmor);
 		break;
