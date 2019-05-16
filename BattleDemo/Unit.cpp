@@ -133,7 +133,7 @@ int Unit::CalculatePhysicalDamage(Damage& d) {
 		d.SetFinalDamage(d.GetDamage() - (2* GetAmor()));
 
 		randChance = rand() % 100;
-		if (randChance <= d.GetStun()) d.SetIsStun(true);
+		if (randChance <= d.GetStun()) SetIsStunned(true);//d.SetIsStun(true);
 
 		break;
 	case Damage::SLASHING:

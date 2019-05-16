@@ -29,6 +29,8 @@ public:
 	int GetHP() const { return m_HP; };
 	void SetHP(int HP) { m_HP = HP; };
 	bool GetAlive() const { return m_IsAlive; };
+	bool GetIsStunned() const { return m_IsStunned; };
+	void SetIsStunned(bool isStunned) { m_IsStunned = isStunned; };
 	int GetLuck() const { return m_Luck; };
 	void SetLuck(int luck) { m_Luck = luck; };
 
@@ -55,7 +57,7 @@ public:
 
 private:
 	std::string m_Name;
-	bool m_IsAlive, m_CanAttack;
+	bool m_IsAlive, m_CanAttack, m_IsStunned;
 	int m_HP, m_Damage, m_TurnsToAttack, m_Luck;
 	int m_Armor, m_MagicResist, m_FireResist, m_IceResist, m_ShockResist;
 	std::vector<Ability*> m_Abilities;
