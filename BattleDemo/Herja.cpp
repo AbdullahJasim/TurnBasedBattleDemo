@@ -37,8 +37,11 @@ void Herja::Shoot(Unit& target) {
 void Herja::SetupAbilities() {
 	int i = 0;
 
-	Slash_MeleeAttack* ma = new Slash_MeleeAttack(*this, "Slash"s, 0, 1.0f, 0.0f);
-	AttachAbility(ma);
-
+	Slash_MeleeAttack* slash = new Slash_MeleeAttack(*this, "Slash"s, 0, 1.0f, 0.0f);
 	m_SkillMapping.insert(make_pair<string, int>("Slash", 0));
+	AttachAbility(slash);
+	
+	Piercing_RangeAttack* gunshot = new Piercing_RangeAttack(*this, "Gun Shot"s, 0, 1.0f, 0.0f);
+	m_SkillMapping.insert(make_pair<string, int>("Shoot", 1));
+	AttachAbility(gunshot);
 }

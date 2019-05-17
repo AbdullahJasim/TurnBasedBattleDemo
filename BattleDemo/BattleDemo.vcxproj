@@ -166,6 +166,7 @@
     <ClCompile Include="Damage.cpp" />
     <ClCompile Include="Blunt_MeleeAttack.cpp" />
     <ClCompile Include="Herja.cpp" />
+    <ClCompile Include="Piercing_RangeAttack.cpp" />
     <ClCompile Include="Slash_MeleeAttack.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

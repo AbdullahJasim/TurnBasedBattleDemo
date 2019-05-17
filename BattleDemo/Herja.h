@@ -3,6 +3,7 @@
 #include <unordered_map>
 #include "Unit.h"
 #include "Slash_MeleeAttack.h"
+#include "Piercing_RangeAttack.h"
 
 class Herja : public Unit {
 public:

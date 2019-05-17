@@ -71,5 +71,8 @@
     <ClCompile Include="Slash_MeleeAttack.cpp">
       <Filter>Abilities</Filter>
     </ClCompile>
+    <ClCompile Include="Piercing_RangeAttack.cpp">
+      <Filter>Abilities</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

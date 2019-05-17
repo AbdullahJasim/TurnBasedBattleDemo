@@ -36,5 +36,5 @@ float Ability::GetMagMod() const { return m_MagicModifier; };
 void Ability::SetMagMod(float mod) { m_MagicModifier = mod; };
 
 void Ability::Print() const {
-	cout << "Ability " << GetName() << " was cast." << endl;
+	cout << "Ability " << GetName() << " was cast, ";
 }
