@@ -8,7 +8,7 @@
 class Herja : public Unit {
 public:
 	Herja();
-	Herja(int damage, int HP, int luck, int armor, int magicResist, int fireResist, int iceResist, int shockResist);
+	Herja(int HP, int damage, int luck, int armor, int magicResist, int fireResist, int iceResist, int shockResist);
 
 	//copying isn't useful in this context
 	Herja(const Herja& src) = delete;
@@ -18,9 +18,10 @@ public:
 
 	virtual void Slash(Unit& target);
 	virtual void Shoot(Unit& target);
+	virtual bool HasBullets();
 
 private:
-	int m_CurrentPosition;
+	int m_CurrentPosition, m_Bullets;
 	std::unordered_map<std::string, int> m_SkillMapping;
 
 	void SetupAbilities();

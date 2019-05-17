@@ -6,8 +6,8 @@ Herja::Herja() {
 
 }
 
-Herja::Herja(int damage, int HP, int luck, int armor, int magicResist, int fireResist, int iceResist, int shockResist) :
-	Unit("Herja", 100, damage)
+Herja::Herja(int HP, int damage, int luck, int armor, int magicResist, int fireResist, int iceResist, int shockResist) :
+	Unit("Herja", HP, damage)
 {
 	SetLuck(luck);
 	SetArmor(armor);
@@ -16,6 +16,8 @@ Herja::Herja(int damage, int HP, int luck, int armor, int magicResist, int fireR
 	SetIceResist(iceResist);
 	SetShockResist(shockResist);
 	SetupAbilities();
+
+	m_Bullets = 6;
 }
 
 Herja::~Herja() {
@@ -31,7 +33,14 @@ void Herja::Slash(Unit& target) {
 
 void Herja::Shoot(Unit& target) {
 	auto it = m_SkillMapping.find("Shoot");
-	if (it != m_SkillMapping.end()) UseAbility(target, it->second);
+	if (it != m_SkillMapping.end()) {
+		UseAbility(target, it->second);
+		--m_Bullets;
+	}
+}
+
+bool Herja::HasBullets() {
+	return (m_Bullets > 0);
 }
 
 void Herja::SetupAbilities() {

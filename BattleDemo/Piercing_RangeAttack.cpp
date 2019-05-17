@@ -12,7 +12,7 @@ Piercing_RangeAttack::~Piercing_RangeAttack() {}
 
 void Piercing_RangeAttack::Apply(Unit& target) {
 	Print();
-	Damage d(GetOwner().GetDamage() * GetPhysMod(), 10.0, 0.0, 0.0, Damage::PHYSICAL, Damage::PIERCING, Damage::NONE);
+	Damage d(GetOwner().GetDamage() * GetPhysMod(), 5.0, 0.0, 20.0, Damage::PHYSICAL, Damage::PIERCING, Damage::NONE);
 	d.SetFluctuation(GetOwner().GetLuck());
 	target.ApplyDamage(d, GetOwner());
 }

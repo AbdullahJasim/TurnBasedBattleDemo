@@ -11,17 +11,6 @@ Ability::Ability(Unit& owner, string name, int turns, float physMod, float magMo
 {
 }
 
-/*
-Ability::Ability(const Ability& src) :
-	m_Name(src.GetName()),
-	m_TurnsToCast(src.GetTurns()),
-	m_PhysicalModifier(src.GetPhysMod()),
-	m_MagicModifier(src.GetMagMod()),
-	m_Owner(src.GetOwner())
-{
-}
-*/
-
 Ability::~Ability() {}
 
 //setters and getters
