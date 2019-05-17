@@ -1,3 +1,40 @@
-﻿  BattleDemo.cpp
-c:\users\minta\source\repos\battledemo\battledemo\battledemo.cpp(12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  BattleDemo.vcxproj -> C:\Users\minta\source\repos\BattleDemo\Debug\BattleDemo.exe
+﻿  Board.cpp
+c:\users\minta\source\repos\battledemo\battledemo\board.cpp(10): warning C4930: 'Board::Slot s(void)': prototyped function not called (was a variable definition intended?)
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\unordered_map(133): error C2280: 'std::hash<_Kty>::hash(const std::hash<_Kty> &)': attempting to reference a deleted function
+          with
+          [
+              _Kty=std::pair<int,int>
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\type_traits(2440): note: compiler has generated 'std::hash<_Kty>::hash' here
+          with
+          [
+              _Kty=std::pair<int,int>
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\type_traits(2440): note: 'std::hash<_Kty>::hash(const std::hash<_Kty> &)': function was implicitly deleted because a base class invokes a deleted or inaccessible function 'std::_Conditionally_enabled_hash<_Kty,false>::_Conditionally_enabled_hash(const std::_Conditionally_enabled_hash<_Kty,false> &)'
+          with
+          [
+              _Kty=std::pair<int,int>
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\type_traits(2424): note: 'std::_Conditionally_enabled_hash<_Kty,false>::_Conditionally_enabled_hash(const std::_Conditionally_enabled_hash<_Kty,false> &)': function was explicitly deleted
+          with
+          [
+              _Kty=std::pair<int,int>
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\unordered_map(132): note: while compiling class template member function 'std::unordered_map<std::pair<int,int>,Board::Slot,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>::unordered_map(void)'
+          with
+          [
+              _Kty=std::pair<int,int>,
+              _Ty=Board::Slot
+          ]
+  c:\users\minta\source\repos\battledemo\battledemo\board.cpp(3): note: see reference to function template instantiation 'std::unordered_map<std::pair<int,int>,Board::Slot,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>::unordered_map(void)' being compiled
+          with
+          [
+              _Kty=std::pair<int,int>,
+              _Ty=Board::Slot
+          ]
+  c:\users\minta\source\repos\battledemo\battledemo\board.h(24): note: see reference to class template instantiation 'std::unordered_map<std::pair<int,int>,Board::Slot,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' being compiled
+          with
+          [
+              _Kty=std::pair<int,int>,
+              _Ty=Board::Slot
+          ]

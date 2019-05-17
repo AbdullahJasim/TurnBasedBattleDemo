@@ -16,6 +16,7 @@ Herja::Herja(int HP, int damage, int luck, int armor, int magicResist, int fireR
 	SetIceResist(iceResist);
 	SetShockResist(shockResist);
 	SetupAbilities();
+	SetPosition(make_pair<int, int>(0, 1));
 
 	m_Bullets = 6;
 }
@@ -33,7 +34,7 @@ void Herja::Slash(Unit& target) {
 
 void Herja::Shoot(Unit& target) {
 	auto it = m_SkillMapping.find("Shoot");
-	if (it != m_SkillMapping.end()) {
+	if (it != m_SkillMapping.end() && HasBullets()) {
 		UseAbility(target, it->second);
 		--m_Bullets;
 	}
