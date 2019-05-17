@@ -1,3 +1,2 @@
-﻿  BattleDemo.cpp
-c:\users\minta\source\repos\battledemo\battledemo\battledemo.cpp(11): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+﻿  Herja.cpp
   BattleDemo.vcxproj -> C:\Users\minta\source\repos\BattleDemo\Debug\BattleDemo.exe

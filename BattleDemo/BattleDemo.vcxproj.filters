@@ -30,17 +30,20 @@
     <ClInclude Include="Ability.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MeleeAttack.h">
-      <Filter>Abilities</Filter>
-    </ClInclude>
     <ClInclude Include="Damage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeadSmash.h">
-      <Filter>Abilities</Filter>
-    </ClInclude>
     <ClInclude Include="Herja.h">
       <Filter>Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Piercing_RangeAttack.h">
+      <Filter>Abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Blunt_MeleeAttack.h">
+      <Filter>Abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Slash_MeleeAttack.h">
+      <Filter>Abilities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -56,17 +59,17 @@
     <ClCompile Include="Ability.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MeleeAttack.cpp">
-      <Filter>Abilities</Filter>
-    </ClCompile>
     <ClCompile Include="Damage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="HeadSmash.cpp">
-      <Filter>Abilities</Filter>
-    </ClCompile>
     <ClCompile Include="Herja.cpp">
       <Filter>Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Blunt_MeleeAttack.cpp">
+      <Filter>Abilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Slash_MeleeAttack.cpp">
+      <Filter>Abilities</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

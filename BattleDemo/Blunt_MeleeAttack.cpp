@@ -1,22 +1,22 @@
-#include "HeadSmash.h"
+#include "Blunt_MeleeAttack.h"
 #include "Unit.h"
 
 using namespace std;
 
-HeadSmash::HeadSmash(Unit& owner, std::string name, int turns, float physMod, float magMod) :
+Blunt_MeleeAttack::Blunt_MeleeAttack(Unit& owner, std::string name, int turns, float physMod, float magMod) :
 	Ability(owner, name, turns, physMod, magMod)
 {
 }
 
-HeadSmash::~HeadSmash() {}
+Blunt_MeleeAttack::~Blunt_MeleeAttack() {}
 
-void HeadSmash::Apply(Unit& target) {
+void Blunt_MeleeAttack::Apply(Unit& target) {
 	Print();
 	Damage d(GetOwner().GetDamage() * GetPhysMod(), 0.0, 20.0, 0.0, Damage::PHYSICAL, Damage::BLUNT, Damage::NONE);
 	d.SetFluctuation(GetOwner().GetLuck());
 	target.ApplyDamage(d, GetOwner());
 }
 
-void HeadSmash::Trigger(Unit& target) {
+void Blunt_MeleeAttack::Trigger(Unit& target) {
 	cout << "No trigger for " << GetName() << endl;
 }

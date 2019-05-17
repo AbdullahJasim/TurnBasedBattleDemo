@@ -1,22 +1,22 @@
-#include "MeleeAttack.h"
+#include "Slash_MeleeAttack.h"
 #include "Unit.h"
 
 using namespace std;
 
-MeleeAttack::MeleeAttack(Unit& owner, std::string name, int turns, float physMod, float magMod) : 
+Slash_MeleeAttack::Slash_MeleeAttack(Unit& owner, std::string name, int turns, float physMod, float magMod) :
 	Ability(owner, name, turns, physMod, magMod)
 {
 }
 
-MeleeAttack::~MeleeAttack() {}
+Slash_MeleeAttack::~Slash_MeleeAttack() {}
 
-void MeleeAttack::Apply(Unit& target) {
+void Slash_MeleeAttack::Apply(Unit& target) {
 	Print();
 	Damage d(GetOwner().GetDamage() * GetPhysMod(), 10.0, 0.0, 0.0, Damage::PHYSICAL, Damage::SLASHING, Damage::NONE);
 	d.SetFluctuation(GetOwner().GetLuck());
 	target.ApplyDamage(d, GetOwner());
 }
 
-void MeleeAttack::Trigger(Unit& target) {
+void Slash_MeleeAttack::Trigger(Unit& target) {
 	cout << "No trigger for " << GetName() << endl;
 }

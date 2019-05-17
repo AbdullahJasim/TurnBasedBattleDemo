@@ -153,19 +153,20 @@
   <ItemGroup>
     <ClInclude Include="Ability.h" />
     <ClInclude Include="Damage.h" />
-    <ClInclude Include="HeadSmash.h" />
+    <ClInclude Include="Blunt_MeleeAttack.h" />
     <ClInclude Include="Herja.h" />
-    <ClInclude Include="MeleeAttack.h" />
+    <ClInclude Include="Slash_MeleeAttack.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Piercing_RangeAttack.h" />
     <ClInclude Include="Unit.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Ability.cpp" />
     <ClCompile Include="BattleDemo.cpp" />
     <ClCompile Include="Damage.cpp" />
-    <ClCompile Include="HeadSmash.cpp" />
+    <ClCompile Include="Blunt_MeleeAttack.cpp" />
     <ClCompile Include="Herja.cpp" />
-    <ClCompile Include="MeleeAttack.cpp" />
+    <ClCompile Include="Slash_MeleeAttack.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

@@ -37,7 +37,7 @@ void Herja::Shoot(Unit& target) {
 void Herja::SetupAbilities() {
 	int i = 0;
 
-	MeleeAttack* ma = new MeleeAttack(*this, "Slash"s, 0, 1.0f, 0.0f);
+	Slash_MeleeAttack* ma = new Slash_MeleeAttack(*this, "Slash"s, 0, 1.0f, 0.0f);
 	AttachAbility(ma);
 
 	m_SkillMapping.insert(make_pair<string, int>("Slash", 0));
