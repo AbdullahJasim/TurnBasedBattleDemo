@@ -12,7 +12,7 @@ Blunt_MeleeAttack::~Blunt_MeleeAttack() {}
 
 void Blunt_MeleeAttack::Apply(Unit& target) {
 	Print();
-	Damage d(GetOwner().GetDamage() * GetPhysMod(), 0.0, 20.0, 0.0, Damage::PHYSICAL, Damage::BLUNT, Damage::NONE);
+	Damage d(static_cast<int>(GetOwner().GetDamage() * GetPhysMod()), 0, 20, 0, Damage::PHYSICAL, Damage::BLUNT, Damage::NONE);
 	d.SetFluctuation(GetOwner().GetLuck());
 	target.ApplyDamage(d, GetOwner());
 }

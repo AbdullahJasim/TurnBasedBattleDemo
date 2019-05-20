@@ -16,8 +16,8 @@ public:
 
 	virtual ~Herja();
 
-	std::pair<int, int> GetPosition() const { return m_CurrentPosition; };
-	void SetPosition(std::pair<int, int> pos) { m_CurrentPosition = pos; };
+	//std::pair<int, int> GetPosition() const { return m_CurrentPosition; };
+	//void SetPosition(std::pair<int, int> pos) { m_CurrentPosition = pos; };
 
 	virtual void Slash(Unit& target);
 	virtual void Shoot(Unit& target);
@@ -25,7 +25,7 @@ public:
 
 private:
 	int m_Bullets;
-	std::pair<int, int> m_CurrentPosition;
+	//std::pair<int, int> m_CurrentPosition;
 	std::unordered_map<std::string, int> m_SkillMapping;
 
 	void SetupAbilities();
