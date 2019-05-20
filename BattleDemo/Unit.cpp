@@ -81,13 +81,15 @@ void Unit::Attack(Unit& other) const {
 
 bool Unit::ApplyDamage(Damage& d, const Unit& source) {
 	int damage = CalculateDamage(d);
+	if (damage <= 0) damage = 0;
 
 	cout << "Unit " << source.GetName() << " attacks " << GetName() << " for " << damage << " points." << endl;
 
-	if (d.GetFinalDamage() >= GetHP()) {
+	if (damage >= GetHP()) {
 		Die();
 		return true;
 	}
+
 
 	SetHP(GetHP() - damage);
 	return false;
@@ -115,7 +117,7 @@ int Unit::CalculateDamage(Damage& d) {
 		break;
 	}
 
-	return finalDamage;
+	return d.GetFinalDamage();
 }
 
 int Unit::CalculatePhysicalDamage(Damage& d) {
@@ -152,7 +154,7 @@ int Unit::CalculatePhysicalDamage(Damage& d) {
 		d.SetFinalDamage(d.GetFinalDamage() * 2);
 	}
 
-	randChance = rand() % d.GetFinalDamage();
+	if (d.GetFinalDamage() != 0) randChance = rand() % d.GetFinalDamage();
 	randChance *= d.GetFluctuation();
 	randChance /= 100;
 	fluctuation = static_cast<int>(randChance);

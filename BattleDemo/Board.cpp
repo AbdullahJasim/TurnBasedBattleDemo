@@ -25,7 +25,7 @@ void Board::SetUnitAtSlot(std::pair<int, int> targetSlot, std::shared_ptr<Unit> 
 
 	Slot* s = it->second;
 	s->m_Unit = unit;
-	s->PrintUnit();
+	//s->PrintUnit();
 }
 
 shared_ptr<Unit> Board::GetUnitAtSlot(std::pair<int, int> targetSlot) {
@@ -36,7 +36,7 @@ shared_ptr<Unit> Board::GetUnitAtSlot(std::pair<int, int> targetSlot) {
 	};
 
 	Slot* s = it->second;
-	s->PrintUnit();
+	//s->PrintUnit();
 	return s->m_Unit;
 }
 
