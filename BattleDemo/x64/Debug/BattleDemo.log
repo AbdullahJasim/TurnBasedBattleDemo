@@ -1,3 +1,2 @@
-﻿  Unit.cpp
-c:\gitprojects\turnbasedbattledemo\battledemo\unit.cpp(145): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+﻿  BattleDemo.cpp
   BattleDemo.vcxproj -> C:\GitProjects\TurnBasedBattleDemo\x64\Debug\BattleDemo.exe

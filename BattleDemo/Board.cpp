@@ -40,12 +40,12 @@ shared_ptr<Unit> Board::GetUnitAtSlot(std::pair<int, int> targetSlot) {
 	return s->m_Unit;
 }
 
-/*
-void Board::HighlightSlot(std::pair<int, int> targetSlot) {
 
+void Board::SelectSlot(std::pair<int, int> targetSlot) {
+	auto it = m_Slots.find(targetSlot);
+	if (it == m_Slots.end()) {
+		return;
+	};
+
+	it->second->m_IsHighlighted = true;
 }
-
-void Board::FacilitateAttack(Unit& attacker, std::pair<int, int> targetSlot) {
-
-}
-*/

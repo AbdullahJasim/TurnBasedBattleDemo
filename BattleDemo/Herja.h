@@ -22,10 +22,12 @@ public:
 	virtual void Slash(Unit& target);
 	virtual void Shoot(Unit& target);
 	virtual bool HasBullets();
+	virtual std::pair<int, int> GetPosition();
+	virtual void SetPosition(std::pair<int, int> pos);
 
 private:
 	int m_Bullets;
-	//std::pair<int, int> m_CurrentPosition;
+	std::pair<int, int> m_CurrentPosition;
 	std::unordered_map<std::string, int> m_SkillMapping;
 
 	void SetupAbilities();

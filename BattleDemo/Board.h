@@ -11,13 +11,13 @@ public:
 	std::shared_ptr<Unit> GetUnitAtSlot(std::pair<int, int> targetSlot);
 	void SetUnitAtSlot(std::pair<int, int> targetSlot, std::shared_ptr<Unit> unit);
 	void SelectSlot(std::pair<int, int> targetSlot);
-	void FacilitateAttack(Unit& attacker, std::pair<int, int> targetSlot);
+	//void FacilitateAttack(std::shared_ptr<Unit> unit, std::pair<int, int> targetSlot);
 
 private:
 	class Slot {
 	public:
 		Slot() {};
-		bool IsHighlighted;
+		bool m_IsHighlighted;
 		std::shared_ptr<Unit> m_Unit;
 
 		void PrintUnit() { 

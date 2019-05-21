@@ -16,7 +16,7 @@ Herja::Herja(int HP, int damage, int luck, int armor, int magicResist, int fireR
 	SetIceResist(iceResist);
 	SetShockResist(shockResist);
 	SetupAbilities();
-	//SetPosition(make_pair<int, int>(0, 1));
+	SetPosition(make_pair<int, int>(0, 1));
 
 	m_Bullets = 6;
 }
@@ -54,4 +54,12 @@ void Herja::SetupAbilities() {
 	Piercing_RangeAttack* gunshot = new Piercing_RangeAttack(*this, "Gun Shot"s, 0, 1.0f, 0.0f);
 	m_SkillMapping.insert(make_pair<string, int>("Shoot", 1));
 	AttachAbility(gunshot);
+}
+
+pair<int, int> Herja::GetPosition() {
+	return m_CurrentPosition;
+}
+
+void Herja::SetPosition(pair<int, int> pos) {
+	m_CurrentPosition = pos;
 }
