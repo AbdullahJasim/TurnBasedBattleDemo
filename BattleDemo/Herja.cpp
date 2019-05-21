@@ -16,7 +16,7 @@ Herja::Herja(int HP, int damage, int luck, int armor, int magicResist, int fireR
 	SetIceResist(iceResist);
 	SetShockResist(shockResist);
 	SetupAbilities();
-	SetPosition(make_pair<int, int>(0, 1));
+	SetPosition(make_pair<int, int>(2, 1));
 
 	m_Bullets = 6;
 }
