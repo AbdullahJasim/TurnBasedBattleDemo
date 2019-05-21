@@ -2,7 +2,7 @@
 
 using namespace std;
 
-Board::Board(int height, int width) {
+Board::Board(int height, int width) : m_Height(height), m_Width(width) {
 	for (int i = 0; i < height; ++i) {
 		for (int j = 0; j < width; ++j) {
 			Slot* s = new Slot();
