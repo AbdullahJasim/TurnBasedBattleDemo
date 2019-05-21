@@ -49,3 +49,21 @@ void Board::SelectSlot(std::pair<int, int> targetSlot) {
 
 	it->second->m_IsHighlighted = true;
 }
+
+void Board::PrintBoard() {
+	int row = 0;
+	for (auto it: m_Slots) {
+		if (it.first.first > row) {
+			cout << endl;
+			++row;
+		}
+
+		if (it.second->m_Unit) {
+			cout << "X\t";
+		} else {
+			cout << "O\t";
+		}
+	}
+
+	cout << endl;
+}
